@@ -8,11 +8,11 @@ from utils.logger import LogGen
 
 class Test002:
     baseURL = readConfig.getBaseURL()
-    logger = LogGen.logGen()
+    log = LogGen.logGen()
 
     def test_case_02(self, setup):
-        self.logger.info("***********  Test002 Start  **********")
-        self.logger.info("***********  Verify Regulator link after navigating Pages **********")
+        self.log.info("***********  Test002 Start  **********")
+        self.log.info("***********  Verify Regulator link after navigating Pages **********")
         self.driver = setup
         self.hp = homePage(self.driver)
         self.sp = searchResult(self.driver)
@@ -27,14 +27,14 @@ class Test002:
         if self.driver.title == "Solutions | Leverage configuration accelerators Infogix":
             self.driver.close()
             self.driver.quit()
-            self.logger.info("***********  Test001 passed  **********")
-            self.logger.info("***********  Test001 Finished  **********")
+            self.log.info("***********  Test001 passed  **********")
+            self.log.info("***********  Test001 Finished  **********")
             assert True
         else:
             self.driver.save_screenshot("D:\Assessment\screenShot\\" + "testcase_2.png")
             self.driver.close()
             self.driver.quit()
-            self.logger.error("***********  Test001 Failed  **********")
-            self.logger.error("***********  Test001 Finished  **********")
+            self.log.error("***********  Test001 Failed  **********")
+            self.log.error("***********  Test001 Finished  **********")
             assert False
 

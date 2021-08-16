@@ -1,6 +1,5 @@
 import logging
 
-
 class LogGen:
 
     @staticmethod
@@ -12,5 +11,3 @@ class LogGen:
         return logger
 
 
-# if __name__ == '__main__':
-#     LogGen.logGen().info("Test message")
