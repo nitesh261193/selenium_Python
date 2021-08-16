@@ -1,10 +1,13 @@
 import pytest
 from selenium import webdriver
+import os
+
 
 
 @pytest.fixture
 def setup():
-    PATH = "D:\Assessment\driver\chromedriver.exe"
+    dirname = os.path.dirname(__file__)
+    PATH = os.path.join(dirname, '../driver/chromedriver.exe')
     options = webdriver.ChromeOptions()
     options.add_argument('--ignore-certificate-errors')
     options.add_argument("--test-type")

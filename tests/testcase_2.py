@@ -4,6 +4,8 @@ from pages.homePage import homePage
 from pages.searchResultPage import searchResult
 from locators.locators import testcase_2
 from utils.logger import LogGen
+from pathlib import Path
+rootDir = str(Path(__file__).parent.parent)
 
 
 class Test002:
@@ -31,7 +33,7 @@ class Test002:
             self.log.info("***********  Test001 Finished  **********")
             assert True
         else:
-            self.driver.save_screenshot("D:\Assessment\screenShot\\" + "testcase_2.png")
+            self.driver.save_screenshot(rootDir+'/screenShot/testcase_2.png')
             self.driver.close()
             self.driver.quit()
             self.log.error("***********  Test001 Failed  **********")

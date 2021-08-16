@@ -1,5 +1,5 @@
 import time
-
+import os
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
@@ -7,6 +7,8 @@ from pages.contactPage import contactPage
 from pages.homePage import homePage
 from utils.logger import LogGen
 from utils.readProperties import readConfig
+from pathlib import Path
+rootDir = str(Path(__file__).parent.parent)
 
 
 class Test001:
@@ -40,7 +42,7 @@ class Test001:
             self.log.info("***********  Test001 passed  **********")
             self.log.info("***********  Test001 finished  **********")
         else:
-            self.driver.save_screenshot("D:\Assessment\screenShot\\" + "testcase_1.png")
+            self.driver.save_screenshot(rootDir+'/screenShot/testcase_1.png')
             self.driver.close()
             self.log.error("***********  Test001 Failed  **********")
             self.log.error("***********  Test001 finished  **********")

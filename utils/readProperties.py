@@ -1,7 +1,9 @@
 import configparser
+from pathlib import Path
 
+rootDir = str(Path(__file__).parent.parent)
 config = configparser.RawConfigParser()
-config.read("D:\Assessment\configuration\config.ini")
+config.read(rootDir + "\configuration\config.ini")
 
 
 class readConfig:
@@ -10,5 +12,3 @@ class readConfig:
     def getBaseURL():
         url = config.get("common info", "baseURL")
         return url
-
-
