@@ -13,9 +13,6 @@ class searchResult:
     def clickOnNextButton(self):
         self.driver.find_element(*testcase_2.next_page_button).click()
 
-    # def scrollToNextButton(self, element):
-    #     self.driver.execute_script("return arguments[0].scrollIntoView();", element)
-
     def clickOnSearchingLink(self):
         self.driver.find_element(*testcase_2.searchingLink).click()
 
